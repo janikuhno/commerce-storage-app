@@ -2,8 +2,10 @@
   "name": "commerce-storage-app",
   "version": "1.0.0",
   "description": "A simple app that functions as a product storage management program for commerce.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
