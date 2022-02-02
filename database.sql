@@ -14,16 +14,18 @@ CREATE TABLE users(
 
 --products
 CREATE TABLE products(
-    product_id INT,
+    product_id SERIAL,
+    code INT NOT NULL UNIQUE, --example GTIN/EAN code: 6420256001547 (13 integers)
     full_name VARCHAR(255) NOT NULL,
     image_path VARCHAR(255),
     weight INT NOT NULL,
     PRIMARY KEY (product_id)
 );
 
---nutritions
+--nutritions (in 100g)
 CREATE TABLE nutritions(
-    product_id INT,
+    nutrition_id SERIAL,
+    product_id SERIAL,
     energy_kcal INT,
     energy_kj INT,
     fat DECIMAL,
@@ -32,6 +34,6 @@ CREATE TABLE nutritions(
     carbs_sugar DECIMAL,
     protein DECIMAL,
     salt DECIMAL,
-    PRIMARY KEY (product_id),
+    PRIMARY KEY (nutrition_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
