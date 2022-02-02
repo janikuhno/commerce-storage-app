@@ -15,7 +15,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // routes
-app.use('/authentication', require('./routes/jwtAuth'));
+app.use('/authentication', require('./routes/authentication'));
+app.use('/products', require('./routes/products'));
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
