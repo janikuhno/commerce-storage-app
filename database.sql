@@ -15,7 +15,7 @@ CREATE TABLE users(
 --products
 CREATE TABLE products(
     product_id SERIAL,
-    code INT NOT NULL UNIQUE, --example GTIN/EAN code: 6420256001547 (13 integers)
+    code BIGINT NOT NULL UNIQUE, --example GTIN/EAN code: 6420256001547 (13 integers)
     full_name VARCHAR(255) NOT NULL,
     image_path VARCHAR(255),
     weight INT NOT NULL,
