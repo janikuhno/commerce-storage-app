@@ -24,7 +24,7 @@ const Login = ({ setAuth }) => {
       });
 
       const parseRes = await response.json();
-      
+
       if (parseRes.jwtToken) {
         localStorage.setItem('token', parseRes.jwtToken);
 
@@ -42,25 +42,27 @@ const Login = ({ setAuth }) => {
   return (
     <Fragment>
       <h1 className="text-center my-5">Login</h1>
-      <form onSubmit={onSubmitForm}>
-        <input
-          type="name"
-          name="name"
-          placeholder="name"
-          className="form-control my-3"
-          value={name}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          className="form-control my-3"
-          value={password}
-          onChange={(e) => onChange(e)}
-        />
-        <button className="btn btn-success btn-block">Submit</button>
-      </form>
+      <div className="d-flex justify-content-center">
+        <form onSubmit={onSubmitForm}>
+          <input
+            type="name"
+            name="name"
+            placeholder="name"
+            className="form-control my-3"
+            value={name}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            className="form-control my-3"
+            value={password}
+            onChange={(e) => onChange(e)}
+          />
+          <button className="btn btn-success btn-block">Submit</button>
+        </form>
+      </div>
     </Fragment>
   );
 };
