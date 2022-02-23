@@ -16,9 +16,9 @@ router.post('/products', authorize, async (req, res) => {
   }
 });
 
-router.get('/products', authorize, async (req, res) => {
+router.get('/products/:code', authorize, async (req, res) => {
   try {
-    const { code } = req.body;
+    const { code } = req.params;
     const product = await pool.query(
       'SELECT code, name, weight, kcal FROM products WHERE code = $1',
       [code]
