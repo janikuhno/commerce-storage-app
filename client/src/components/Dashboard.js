@@ -1,6 +1,9 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
+// components
+import SearchProduct from './productList/SearchProduct';
+
 const Dashboard = ({ setAuth }) => {
   // logout
   const logout = async (e) => {
@@ -22,6 +25,8 @@ const Dashboard = ({ setAuth }) => {
           Logout
         </button>
       </div>
+
+      <SearchProduct />
     </div>
   );
 };
