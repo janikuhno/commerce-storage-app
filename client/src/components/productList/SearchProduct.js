@@ -42,9 +42,7 @@ const SearchProduct = () => {
         </button>
       </div>
       <div className="d-flex justify-content-center">
-        <div>
-          <ImageProduct product={product} />
-        </div>
+        <div>{product.length !== 0 && <ImageProduct product={product} />}</div>
         <div>{product.length !== 0 && <ListProduct product={product} />}</div>
       </div>
     </Fragment>

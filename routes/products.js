@@ -20,7 +20,7 @@ router.get('/products/:code', authorize, async (req, res) => {
   try {
     const { code } = req.params;
     const product = await pool.query(
-      'SELECT code, name, weight, kcal FROM products WHERE code = $1',
+      'SELECT code, name, image_path, weight, kcal FROM products WHERE code = $1',
       [code]
     );
 
