@@ -27,7 +27,7 @@ const SearchProduct = () => {
         <div className="form-outline">
           <input
             type="search"
-            placeholder="Enter GTIN/EAN code"
+            placeholder="Syötä EAN/GTIN -koodi"
             className="form-control"
             value={code}
             onChange={(e) => setCode(e.target.value)}

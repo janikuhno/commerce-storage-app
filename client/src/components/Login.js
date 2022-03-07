@@ -41,13 +41,13 @@ const Login = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <h1 className="text-center my-5">Login</h1>
+      <h1 className="text-center my-5">Sisäänkirjautuminen</h1>
       <div className="d-flex justify-content-center">
         <form onSubmit={onSubmitForm}>
           <input
             type="name"
             name="name"
-            placeholder="name"
+            placeholder="käyttäjätunnus"
             className="form-control my-3"
             value={name}
             onChange={(e) => onChange(e)}
@@ -55,12 +55,12 @@ const Login = ({ setAuth }) => {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="salasana"
             className="form-control my-3"
             value={password}
             onChange={(e) => onChange(e)}
           />
-          <button className="btn btn-success btn-block">Submit</button>
+          <button className="btn btn-success btn-block">Kirjaudu sisään</button>
         </form>
       </div>
     </Fragment>

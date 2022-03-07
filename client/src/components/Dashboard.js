@@ -22,7 +22,7 @@ const Dashboard = ({ setAuth }) => {
       <div className="d-flex mt-5 justify-content-around">
         <h2>Varastonhallinta</h2>
         <button className="btn btn-primary" onClick={(e) => logout(e)}>
-          Logout
+          Kirjaudu ulos
         </button>
       </div>
 
