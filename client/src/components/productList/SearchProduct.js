@@ -1,4 +1,6 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
+import ListProduct from './ListProduct';
+import ImageProduct from './ImageProduct';
 
 const SearchProduct = () => {
   const [code, setCode] = useState('');
@@ -31,9 +33,19 @@ const SearchProduct = () => {
             onChange={(e) => setCode(e.target.value)}
           />
         </div>
-        <button type="button" className="btn btn-primary" onClick={() => getProduct(code)}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => getProduct(code)}
+        >
           <i className="fas fa-search"></i>
         </button>
+      </div>
+      <div className="d-flex justify-content-center">
+        <div>
+          <ImageProduct product={product} />
+        </div>
+        <div>{product.length !== 0 && <ListProduct product={product} />}</div>
       </div>
     </Fragment>
   );
