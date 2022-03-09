@@ -20,15 +20,13 @@ const Navigation = ({ setAuth }) => {
       <div className="d-flex mt-5 justify-content-around">
         <h2>Tuotehallinta</h2>
         <div>
-          <nav>
-            <ul>
-              <li style={{ display: 'inline' }}>
-                <Link to="/dashboard">Etsi tuote</Link>
-              </li>
-              <li style={{ display: 'inline' }}>
-                <Link to="/allproducts">Listaa tuotteet</Link>
-              </li>
-            </ul>
+          <nav className="nav">
+            <Link to="/dashboard" className="nav-link">
+              Etsi tuote
+            </Link>
+            <Link to="/allproducts" className="nav-link">
+              Listaa tuotteet
+            </Link>
           </nav>
         </div>
         <button className="btn btn-primary" onClick={(e) => logout(e)}>
