@@ -16,6 +16,21 @@ router.post('/products', authorize, async (req, res) => {
   }
 });
 
+// get all products
+router.get('/products', authorize, async (req, res) => {
+  try {
+    const product = await pool.query(
+      'SELECT code, name, image_path, weight, kcal FROM products'
+    );
+
+    res.json(product.rows);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+// get product with it's ean/gtin code
 router.get('/products/:code', authorize, async (req, res) => {
   try {
     const { code } = req.params;
