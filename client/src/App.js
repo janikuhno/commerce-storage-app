@@ -11,6 +11,7 @@ import {
 //components
 import Login from '../src/components/Login';
 import Dashboard from '../src/components/Dashboard';
+import ListAllProduct from './components/productList/ListAllProduct';
 
 toast.configure();
 
@@ -63,6 +64,17 @@ function App() {
               element={
                 isAuthenticated ? (
                   <Dashboard setAuth={setAuth} />
+                ) : (
+                  <Navigate replace to="/" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/allproducts"
+              element={
+                isAuthenticated ? (
+                  <ListAllProduct setAuth={setAuth} />
                 ) : (
                   <Navigate replace to="/" />
                 )

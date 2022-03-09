@@ -29,7 +29,7 @@ const Login = ({ setAuth }) => {
         localStorage.setItem('token', parseRes.jwtToken);
 
         setAuth(true);
-        toast.success('Login successful!');
+        toast.success('Kirjauduttu sisään!');
       } else {
         setAuth(false);
         toast.error(parseRes);
