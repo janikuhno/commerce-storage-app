@@ -1,6 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Navigation from '../Navigation';
 
+/*
+-link from product code to find product and populate it's state product with that product
+*/
+
 const ListAllProduct = ({ setAuth }) => {
   const [allProducts, setAllProducts] = useState([]);
 
@@ -29,10 +33,10 @@ const ListAllProduct = ({ setAuth }) => {
       <table className="table mt-5">
         <thead>
           <tr>
-            <th>EAN/GTIN -koodi</th>
-            <th>Nimi</th>
-            <th>Kuvapolku</th>
-            <th>Paino</th>
+            <th>EAN/GTIN -code</th>
+            <th>Name</th>
+            <th>Image path</th>
+            <th>Weight</th>
             <th>Kcal</th>
           </tr>
         </thead>
