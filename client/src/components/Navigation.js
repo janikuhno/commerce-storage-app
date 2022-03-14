@@ -32,7 +32,7 @@ const Navigation = ({ setAuth }) => {
           </nav>
         </div>
         <button className="btn btn-primary" onClick={(e) => logout(e)}>
-          Log out
+          Logout
         </button>
       </div>
     </Fragment>
