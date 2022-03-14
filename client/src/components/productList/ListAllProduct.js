@@ -1,9 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Navigation from '../Navigation';
 
-/*
--link from product code to find product and populate it's state product with that product
-*/
+//components
+import Navigation from '../Navigation';
 
 const ListAllProduct = ({ setAuth }) => {
   const [allProducts, setAllProducts] = useState([]);
