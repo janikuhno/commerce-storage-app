@@ -49,49 +49,51 @@ const AddProduct = ({ setAuth }) => {
     <Fragment>
       <Navigation setAuth={setAuth} />
       <h1 className="text-center my-5">Add Product</h1>
-      <form className="d-flex" onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          name="code"
-          placeholder="Code"
-          className="form-control"
-          value={code}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          className="form-control"
-          value={name}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          type="text"
-          name="image_path"
-          placeholder="Image path"
-          className="form-control"
-          value={image_path}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          type="number"
-          name="weight"
-          placeholder="Weight"
-          className="form-control"
-          value={weight}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          type="number"
-          name="kcal"
-          placeholder="Kcal"
-          className="form-control"
-          value={kcal}
-          onChange={(e) => onChange(e)}
-        />
-        <button className="btn btn-success">Add</button>
-      </form>
+      <div className="d-flex justify-content-center">
+        <form onSubmit={onSubmitForm}>
+          <input
+            type="text"
+            name="code"
+            placeholder="Code"
+            className="form-control"
+            value={code}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            className="form-control"
+            value={name}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            type="text"
+            name="image_path"
+            placeholder="Image path"
+            className="form-control"
+            value={image_path}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            type="number"
+            name="weight"
+            placeholder="Weight"
+            className="form-control"
+            value={weight}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            type="number"
+            name="kcal"
+            placeholder="Kcal"
+            className="form-control"
+            value={kcal}
+            onChange={(e) => onChange(e)}
+          />
+          <button className="btn btn-success">Add</button>
+        </form>
+      </div>
     </Fragment>
   );
 };
