@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 const Login = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
-    email: '',
+    name: '',
     password: '',
   });
 

@@ -12,6 +12,7 @@ import {
 import Login from '../src/components/Login';
 import Dashboard from '../src/components/Dashboard';
 import ListAllProduct from './components/productList/ListAllProduct';
+import AddProduct from './components/productList/AddProduct';
 
 toast.configure();
 
@@ -75,6 +76,17 @@ function App() {
               element={
                 isAuthenticated ? (
                   <ListAllProduct setAuth={setAuth} />
+                ) : (
+                  <Navigate replace to="/" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/addproduct"
+              element={
+                isAuthenticated ? (
+                  <AddProduct setAuth={setAuth} />
                 ) : (
                   <Navigate replace to="/" />
                 )

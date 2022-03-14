@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from 'react';
+
+//components
 import ListProduct from './ListProduct';
 import ImageProduct from './ImageProduct';
 

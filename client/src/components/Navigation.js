@@ -26,6 +26,9 @@ const Navigation = ({ setAuth }) => {
             <Link to="/allproducts" className="nav-link">
               List all products
             </Link>
+            <Link to="/addproduct" className="nav-link">
+              Add product
+            </Link>
           </nav>
         </div>
         <button className="btn btn-primary" onClick={(e) => logout(e)}>

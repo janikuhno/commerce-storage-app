@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/authentication', require('./routes/authentication'));
 app.use('/dashboard', require('./routes/products'));
 app.use('/allproducts', require('./routes/products'));
+app.use('/addproduct', require('./routes/products'));
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);

@@ -4,10 +4,10 @@ const pool = require('../db');
 
 router.post('/products', authorize, async (req, res) => {
   try {
-    const { code, name, image, weight, kcal } = req.body;
+    const { code, name, image_path, weight, kcal } = req.body;
     const newProduct = await pool.query(
       `INSERT INTO products(code, name, image_path, weight, kcal) VALUES($1, $2, $3, $4, $5) RETURNING *`,
-      [code, name, image, weight, kcal]
+      [code, name, image_path, weight, kcal]
     );
 
     res.json(newProduct.rows[0]);
@@ -49,10 +49,10 @@ router.get('/products/:code', authorize, async (req, res) => {
 router.put('/products/:code', authorize, async (req, res) => {
   try {
     const { code } = req.params;
-    const { name, image, weight, kcal } = req.body;
+    const { name, image_path, weight, kcal } = req.body;
     const updateProduct = await pool.query(
       'UPDATE products SET name = $1, image_path = $2, weight = $3, kcal = $4 WHERE code = $5 RETURNING *',
-      [name, image, weight, kcal, code]
+      [name, image_path, weight, kcal, code]
     );
 
     if (updateProduct.rows.length === 0) {
