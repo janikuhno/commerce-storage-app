@@ -21,9 +21,27 @@ const ListAllProduct = ({ setAuth }) => {
     }
   };
 
+  // delete a product
+  const deleteProduct = async (code) => {
+    try {
+      await fetch(`/dashboard/products/${code}`, {
+        method: 'DELETE',
+        headers: { jwt_token: localStorage.token },
+      });
+
+      setAllProducts(allProducts.filter((product) => product.code !== code));
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   useEffect(() => {
     getAll();
   }, []);
+
+  useEffect(() => {
+    setAllProducts(allProducts);
+  }, [allProducts]);
 
   return (
     <Fragment>
@@ -48,6 +66,14 @@ const ListAllProduct = ({ setAuth }) => {
                 <td>{p.image_path}</td>
                 <td>{p.weight}</td>
                 <td>{p.kcal}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteProduct(p.code)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
         </tbody>
