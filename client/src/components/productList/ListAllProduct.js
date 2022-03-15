@@ -2,9 +2,11 @@ import React, { Fragment, useState, useEffect } from 'react';
 
 //components
 import Navigation from '../Navigation';
+import DeleteProduct from './DeleteProduct';
 
 const ListAllProduct = ({ setAuth }) => {
   const [allProducts, setAllProducts] = useState([]);
+  // productChange
 
   const getAll = async () => {
     try {
@@ -16,20 +18,6 @@ const ListAllProduct = ({ setAuth }) => {
       const parseRes = await response.json();
 
       return parseRes;
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  // delete a product
-  const deleteProduct = async (code) => {
-    try {
-      await fetch(`/dashboard/products/${code}`, {
-        method: 'DELETE',
-        headers: { jwt_token: localStorage.token },
-      });
-
-      setAllProducts(allProducts.filter((product) => product.code !== code));
     } catch (err) {
       console.error(err.message);
     }
@@ -69,12 +57,11 @@ const ListAllProduct = ({ setAuth }) => {
                 <td>{p.weight}</td>
                 <td>{p.kcal}</td>
                 <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => deleteProduct(p.code)}
-                  >
-                    Delete
-                  </button>
+                  <DeleteProduct
+                    code={p.code}
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                  />
                 </td>
               </tr>
             ))}
