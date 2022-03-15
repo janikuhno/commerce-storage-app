@@ -15,7 +15,7 @@ const ListAllProduct = ({ setAuth }) => {
 
       const parseRes = await response.json();
 
-      setAllProducts(parseRes);
+      return parseRes;
     } catch (err) {
       console.error(err.message);
     }
@@ -36,11 +36,13 @@ const ListAllProduct = ({ setAuth }) => {
   };
 
   useEffect(() => {
-    getAll();
-  }, []);
-
-  useEffect(() => {
-    setAllProducts(allProducts);
+    let isMounted = true;
+    getAll().then((data) => {
+      if (isMounted) setAllProducts(data);
+    });
+    return () => {
+      isMounted = false;
+    };
   }, [allProducts]);
 
   return (
