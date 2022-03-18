@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 const DeleteProduct = ({ code, allProducts, setAllProducts }) => {
   const deleteProduct = async (code) => {
     try {
-      await fetch(`/dashboard/products/${code}`, {
+      await fetch(`/allproducts/products/${code}`, {
         method: 'DELETE',
         headers: { jwt_token: localStorage.token },
       });
@@ -13,7 +13,7 @@ const DeleteProduct = ({ code, allProducts, setAllProducts }) => {
       console.error(err.message);
     }
   };
-  
+
   return (
     <Fragment>
       <button className="btn btn-danger" onClick={() => deleteProduct(code)}>
